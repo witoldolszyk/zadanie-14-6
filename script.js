@@ -5,6 +5,30 @@ var Counter = React.createClass({
         };
     },
 
+    componentWillMount: function() {
+      console.log('Zaraz nastąpi renederowanie')
+    },
+
+    componentDidMount: function() {
+      console.log('komponent zamontowany')
+    },
+
+    componentWillReceiveProps: function() {
+      console.log('wszystko już widnieje na stronie www')
+    },
+    shouldComponentUpdate: function(){
+      console.log('Sprawdzamy czy trzeba coś przerysować')
+    },
+    componentWillUpdate: function() {
+      console.log('więc jednak trzeba coś przerysować')
+    },
+    componentDidUpdate: function() {
+      console.log('dokonały się jednak jakieś manipulacje')
+    },
+    componentWillUnmount: function() {
+      console.log('jednak coś trzeba wymontować')
+    },
+
     increment: function() {
         this.setState({
             counter: this.state.counter + 1
@@ -15,6 +39,7 @@ var Counter = React.createClass({
             counter: this.state.counter - 1
         });
     },
+
 
 
     render: function() {
